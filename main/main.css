@@ -1,0 +1,8 @@
+/* LMSのサイトに適用するCSSを書く */
+
+body {
+    background-color: rgb(243, 250, 255)!important;
+}
+* {
+    font-style: italic!important;
+}
