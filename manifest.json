@@ -1,6 +1,6 @@
 {
     "name": "LMS by Versear（仮）",
-    "description": "金曜4限班のLMSのChrome拡張機能（仮）",
+    "description": "金曜4限班のLMSのChrome拡張機能案（仮）",
     "version": "0.0.1",
     "icons": {
         "16": "images/icon128.png",
@@ -34,14 +34,13 @@
     ],
     "web_accessible_resources": [ {
         "resources": [
-            "/main/BaseElement.html"
+            "/main/BaseElement.html",
+            "/main/BaseElement.js"
         ],
         "matches": [
-            "https://kulms.tl.kansai-u.ac.jp/*"
+            "https://kulms.tl.kansai-u.ac.jp/*",
+            "<all_urls>"
         ]
     }],
-    "content_security_policy": {
-        "extension_pages": "script-src 'self' 'unsafe-inline'; object-src 'self'"
-    },
     "manifest_version": 3
 }
