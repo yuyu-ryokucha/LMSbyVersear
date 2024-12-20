@@ -49,3 +49,6 @@
 ## 参考
 
 ![デモ](https://github.com/yuyu-ryokucha/LMSbyVersear/blob/main/images/demo.png)
+
+* 殺風景なので見た目を整える必要あり
+* スクロールバーを消したい
