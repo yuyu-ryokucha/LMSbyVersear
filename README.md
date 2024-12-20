@@ -45,3 +45,7 @@
 ## その他
 
 * main.jsで取得したデータはchrome.storage.localに保存しておき、BaseElement.htmlで chrome.storage.local.getで取り出す仕組み
+
+## 参考
+
+![デモ](github.com/yuyu-ryokucha/LMSbyVersear/blob/images/demo.png)
