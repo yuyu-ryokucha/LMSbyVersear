@@ -4,9 +4,17 @@
 function main() {
     // URLに"kulms.tl.kansai-u.ac.jp/webclass/course.php"を含むか否か
     if (document.URL.includes("kulms.tl.kansai-u.ac.jp/webclass/course.php")) {
-        saveTaskDeadline();
+        saveTaskDeadline(); // 含むなら情報収集する
     }
+
+    // 要素（BaseElement.html）を追加する
+    const baseElement = document.createElement("iframe");
+    baseElement.setAttribute("src", chrome.runtime.getURL("/main/BaseElement.html"));
+
+    const target = document.querySelector("#UserTopInfo") ?? document.querySelector("header") ?? document.body;
+    target.appendChild(baseElement);
 }
+
 
 // 課題の期限と課題名を保存する関数
 function saveTaskDeadline() {
@@ -37,7 +45,7 @@ function saveTaskDeadline() {
         const existingDatabase = JSON.parse(data.taskDatabase || "{}");
         const mergedDatabase = { ...existingDatabase, ...currentTaskDatabase };
 
-        // マージされたデータをchrome.storage.localに保存
+        // 既存と今回をマージしたデータをchrome.storage.localに保存
         chrome.storage.local.set({ taskDatabase: JSON.stringify(mergedDatabase) }, function () {
             console.log("データ保存完了");
             console.log(mergedDatabase);
@@ -45,10 +53,6 @@ function saveTaskDeadline() {
     });
 }
 
-// Hello World!とメッセージを出す関数
-function hello() {
-    alert('Hello World!');
-}
 
 
 // main関数を実行

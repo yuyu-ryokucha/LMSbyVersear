@@ -1,3 +1,7 @@
+// background.js
+
+// 通知機能に必要 無くても他は問題なく動く
+
 function count24hourTasks() {
     return new Promise((resolve) => {
         chrome.storage.local.get("taskDatabase", function (data) {

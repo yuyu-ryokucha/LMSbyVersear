@@ -9,18 +9,39 @@
     },
     "content_scripts": [
         {
-            "matches": ["https://kulms.tl.kansai-u.ac.jp/*"],
-            "css": ["main/main.css"],
-            "js": ["main/main.js"]
+            "matches": [
+                "https://kulms.tl.kansai-u.ac.jp/*"
+            ],
+            "css": [
+                "main/main.css"
+            ],
+            "js": [
+                "main/main.js"
+            ]
         }
     ],
     "action": {
         "default_icon": "images/icon128.png",
         "default_title": "title"
-      },
+    },
     "background": {
         "service_worker": "background.js"
     },
-    "permissions": ["storage", "notifications", "tabs"],
+    "permissions": [
+        "storage",
+        "notifications",
+        "tabs"
+    ],
+    "web_accessible_resources": [ {
+        "resources": [
+            "/main/BaseElement.html"
+        ],
+        "matches": [
+            "https://kulms.tl.kansai-u.ac.jp/*"
+        ]
+    }],
+    "content_security_policy": {
+        "extension_pages": "script-src 'self' 'unsafe-inline'; object-src 'self'"
+    },
     "manifest_version": 3
 }
