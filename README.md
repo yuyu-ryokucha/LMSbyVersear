@@ -14,12 +14,12 @@
 │   └── icon128.png
 │
 ├─ mainフォルダ
-│   ├── main.js（LMSのサイトに適用するJavaScriptファイル。基本ここであらゆる処理をする。）
+│   ├── main.js（LMSのサイトに適用するJavaScript。データを取得（スクレイピング？）したりしやすい。）
 │   ├── apple.js
 │   ├── banana.js
 │   ├── main.css（LMSのサイトに適用するCSS。見た目を整えるだけ。）
 │   │
-│   └── BaseElement.html（LMSのサイトに埋め込む用のHTMLファイル）
+│   └── BaseElement.html（LMSのサイトに埋め込む用のHTMLファイル。データを表示したりしやすい。）
 │
 ├─ popupフォルダ
 │   ├── popup.html（拡張機能のボタンを押した時に出る小窓のHTML。小窓が要らない場合はなくていい。）
@@ -41,3 +41,7 @@
     }
 ]
 ```
+
+## その他
+
+* main.jsで取得したデータはchrome.storage.localに保存しておき、BaseElement.htmlで chrome.storage.local.getで取り出す仕組み
